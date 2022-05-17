@@ -65,14 +65,19 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                             // We must set a branch source ID.
                             id('github')
 
+                            println "==========> after id github"
+
                             // repoOwner, repository, repositoryUrl and configuredByUrl are all required
                             repoOwner(repositoryOwner)
                             repository(repositoryName)
                             repositoryUrl(repositoryURL)
                             configuredByUrl(false)
 
+                            println "================> before github token"
                             // Make sure to properly set this.
                             credentialsId('github-token')
+
+                            println "================> after github token"
 
                             traits {
                                 // Depending on your preferences and root pipeline configuration, you can decide to
