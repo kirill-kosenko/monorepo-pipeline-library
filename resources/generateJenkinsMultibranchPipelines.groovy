@@ -75,7 +75,7 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
 
                             println "================> before github token"
                             // Make sure to properly set this.
-                            credentialsId('github-token')
+                            credentialsId('monorepo-dsl')
 
                             println "================> after github token"
 
