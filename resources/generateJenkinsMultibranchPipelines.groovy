@@ -63,7 +63,7 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                     source {
                         github {
                             // We must set a branch source ID.
-                            id('github')
+                            id(UUID.randomUUID().toString())
 
                             println "==========> after id github"
 
