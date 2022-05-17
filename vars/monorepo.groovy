@@ -2,7 +2,7 @@
  * The step entry point.
  */
 def call() {
-    rintln "=====================> $env.JOB_NAME"
+    println "=====================> $env.JOB_NAME"
     String repositoryName = env.JOB_NAME.split('/')[1]
     println "=====================> $repositoryName"
     String rootFolderPath = "Generated/$repositoryName"
