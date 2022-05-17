@@ -46,6 +46,8 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
     String repositoryOwner = matcher.group('owner')
     String repositoryName = matcher.group('repository')
 
+    println "================> repositoryOwner $repositoryOwner, repositoryName $repositoryName"
+
     // Discover branches strategies
     final int EXCLUDE_PULL_REQUESTS_STRATEGY_ID = 1
 
