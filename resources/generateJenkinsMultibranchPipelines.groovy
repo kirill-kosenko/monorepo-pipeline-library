@@ -1,3 +1,7 @@
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  * Get all ancestor folders paths.
  * <pre>
@@ -125,8 +129,6 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
     }
 }
 
-
-def call() {
     // `jenkinsfilePathsStr` and `rootFolderStr` are global variables that are set through `jobDsl`'s `additionalParameters`
 // options.
     List<Path> jenkinsfilePaths = jenkinsfilePathsStr.collect { Paths.get(it) }
@@ -134,4 +136,3 @@ def call() {
     generateFolders(jenkinsfilePaths, rootFolder)
 
     generateMultibranchPipelines(jenkinsfilePaths, rootFolder, repositoryURL)
-}
