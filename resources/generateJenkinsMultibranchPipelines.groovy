@@ -40,6 +40,7 @@ def generateFolders(List<Path> jenkinsfilePaths, Path rootFolder) {
 def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, String repositoryURL) {
     // The following variables are needed to configure the branch source for GitHub. Configuration for other version
     // control providers vary.
+    println "====================> $repositoryURL"
     def matcher = repositoryURL =~ /.+[\/:](?<owner>[^\/]+)\/(?<repository>[^\/]+)\.git$/
     matcher.matches()
     String repositoryOwner = matcher.group('owner')
