@@ -125,10 +125,13 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
     }
 }
 
-// `jenkinsfilePathsStr` and `rootFolderStr` are global variables that are set through `jobDsl`'s `additionalParameters`
-// options.
-List<Path> jenkinsfilePaths = jenkinsfilePathsStr.collect { Paths.get(it) }
-Path rootFolder = Paths.get(rootFolderStr)
 
-generateFolders(jenkinsfilePaths, rootFolder)
-generateMultibranchPipelines(jenkinsfilePaths, rootFolder, repositoryURL)
+def call() {
+    // `jenkinsfilePathsStr` and `rootFolderStr` are global variables that are set through `jobDsl`'s `additionalParameters`
+// options.
+    List<Path> jenkinsfilePaths = jenkinsfilePathsStr.collect { Paths.get(it) }
+    Path rootFolder = Paths.get(rootFolderStr)
+    generateFolders(jenkinsfilePaths, rootFolder)
+
+    generateMultibranchPipelines(jenkinsfilePaths, rootFolder, repositoryURL)
+}
