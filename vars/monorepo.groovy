@@ -104,6 +104,7 @@ List<String> findMultibranchPipelinesToRun(List<String> jenkinsfilePaths) {
  * @param rootFolderPath The common root folder of Multibranch Pipelines.
  * @param multibranchPipelinesToRun The list of Multibranch Pipelines for which a Pipeline is run.
  */
+@NonCPS
 def runPipelines(String rootFolderPath, List<String> multibranchPipelinesToRun) {
     parallel(multibranchPipelinesToRun.inject([:]) { stages, multibranchPipelineToRun ->
         stages + [("Build $multibranchPipelinesToRun"): {
