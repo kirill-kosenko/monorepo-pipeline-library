@@ -108,7 +108,7 @@ List<String> findMultibranchPipelinesToRun(List<String> jenkinsfilePaths) {
 def runPipelines(String rootFolderPath, List<String> multibranchPipelinesToRun) {
     parallel(multibranchPipelinesToRun.inject([:]) { stages, multibranchPipelineToRun ->
         println "==================> $stages"
-        stages + [("Build $multibranchPipelinesToRun"): {
+        stages + [("Build $multibranchPipelineToRun"): {
             def pipelineName = "$rootFolderPath/$multibranchPipelineToRun/${URLEncoder.encode(env.CHANGE_BRANCH ?: env.GIT_BRANCH, 'UTF-8')}"
             println "...................$pipelineName"
             println "...................$multibranchPipelineToRun"
