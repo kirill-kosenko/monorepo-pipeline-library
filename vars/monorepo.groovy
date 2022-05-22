@@ -123,7 +123,7 @@ def runPipelines(String rootFolderPath, List<String> multibranchPipelinesToRun) 
             }
 
             // Trigger downstream builds.
-            build(job: pipelineName, propagate: true, wait: true)
+            build(job: pipelineName, propagate: false, wait: false)
         }]
     })
 }
