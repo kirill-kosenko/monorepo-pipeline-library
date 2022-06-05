@@ -135,7 +135,7 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
             triggers {
                 periodicFolderTrigger {
                     // Scan branches once a week at least to remove orphan pipelines.
-                    interval('7d')
+                    interval('1m')
                 }
             }
         }
