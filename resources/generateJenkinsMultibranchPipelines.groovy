@@ -86,9 +86,10 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                             traits {
                                 // Depending on your preferences and root pipeline configuration, you can decide to
                                 // discover branches, pull requests, perhaps even tags.
-                                gitHubBranchDiscovery {
-                                    strategyId(ALL_BRANCHES)
-                                }
+                                gitBranchDiscovery()
+//                                gitHubBranchDiscovery {
+//                                    strategyId(ALL_BRANCHES)
+//                                }
 //                                gitHubPullRequestDiscovery {
 //                                    strategyId(USE_CURRENT_SOURCE_STRATEGY_ID)
 //                                }
