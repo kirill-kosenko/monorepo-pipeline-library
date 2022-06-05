@@ -65,9 +65,10 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                     source {
                         git {
                             // We must set a branch source ID.
-                            id(UUID.randomUUID().toString())
+                            id("fx")
 
                             println "==========> after id github"
+                            println repositoryOwner.getClass().getName()
 
                             // repoOwner, repository, repositoryUrl and configuredByUrl are all required
                             repoOwner(repositoryOwner)
@@ -95,7 +96,6 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                                 // identifies the check. We want each individual build result to have its own context so
                                 // they do not conflict. Requires the github-scm-trait-notification-context-plugin to be
                                 // installed on the Jenkins instance.
-                                ignoreOnPushNotificationTrait()
 //                                notificationContextTrait {
 //                                    contextLabel("continuous-integration/jenkins/$pipelineName")
 //                                    typeSuffix(false)
