@@ -68,13 +68,14 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                             id("fx")
 
                             println "==========> after id github"
-                            println repositoryOwner.getClass().getName()
 
                             // repoOwner, repository, repositoryUrl and configuredByUrl are all required
-                            repoOwner(repositoryOwner)
-                            repository(repositoryName)
-                            repositoryUrl(repositoryURL)
-                            configuredByUrl(false)
+//                            repoOwner(repositoryOwner)
+//                            repository(repositoryName)
+//                            repositoryUrl(repositoryURL)
+//                            configuredByUrl(false)
+
+                            remote("https://github.com/kirill-kosenko/monorepo-sample.git")
 
                             println "================> before github token"
                             // Make sure to properly set this.
