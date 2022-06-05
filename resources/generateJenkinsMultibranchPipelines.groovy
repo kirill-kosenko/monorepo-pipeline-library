@@ -63,9 +63,9 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
             branchSources {
                 branchSource {
                     source {
-                        github {
+                        git {
                             // We must set a branch source ID.
-                            id(UUID.randomUUID().toString())
+                            id('fx-branch-source')
 
                             println "==========> after id github"
 
