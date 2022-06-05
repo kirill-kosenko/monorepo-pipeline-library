@@ -80,25 +80,25 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
 
                             println "================> after github token"
 
-//                            traits {
-//                                // Depending on your preferences and root pipeline configuration, you can decide to
-//                                // discover branches, pull requests, perhaps even tags.
-//                                gitHubBranchDiscovery {
-//                                    strategyId(ONLY_PULL_REQUESTS_STRATEGY_ID)
-//                                }
-//                                gitHubPullRequestDiscovery {
-//                                    strategyId(USE_CURRENT_SOURCE_STRATEGY_ID)
-//                                }
-//
-//                                // By default, Jenkins notifies GitHub with a constant context, i.e. a string that
-//                                // identifies the check. We want each individual build result to have its own context so
-//                                // they do not conflict. Requires the github-scm-trait-notification-context-plugin to be
-//                                // installed on the Jenkins instance.
+                            traits {
+                                // Depending on your preferences and root pipeline configuration, you can decide to
+                                // discover branches, pull requests, perhaps even tags.
+                                gitHubBranchDiscovery {
+                                    strategyId(ONLY_PULL_REQUESTS_STRATEGY_ID)
+                                }
+                                gitHubPullRequestDiscovery {
+                                    strategyId(USE_CURRENT_SOURCE_STRATEGY_ID)
+                                }
+
+                                // By default, Jenkins notifies GitHub with a constant context, i.e. a string that
+                                // identifies the check. We want each individual build result to have its own context so
+                                // they do not conflict. Requires the github-scm-trait-notification-context-plugin to be
+                                // installed on the Jenkins instance.
 //                                notificationContextTrait {
 //                                    contextLabel("continuous-integration/jenkins/$pipelineName")
 //                                    typeSuffix(false)
 //                                }
-//                            }
+                            }
                         }
                     }
 
