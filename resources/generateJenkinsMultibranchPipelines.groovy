@@ -51,6 +51,7 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
     // Discover branches strategies
     final int EXCLUDE_PULL_REQUESTS_STRATEGY_ID = 1
     final int ONLY_PULL_REQUESTS_STRATEGY_ID = 2
+    final int ALL_BRANCHES = 3
 
     // Discover pull requests from origin strategies
     final int USE_CURRENT_SOURCE_STRATEGY_ID = 2
@@ -84,11 +85,11 @@ def generateMultibranchPipelines(List<Path> jenkinsfilePaths, Path rootFolder, S
                                 // Depending on your preferences and root pipeline configuration, you can decide to
                                 // discover branches, pull requests, perhaps even tags.
                                 gitHubBranchDiscovery {
-                                    strategyId(ONLY_PULL_REQUESTS_STRATEGY_ID)
+                                    strategyId(ALL_BRANCHES)
                                 }
-                                gitHubPullRequestDiscovery {
-                                    strategyId(USE_CURRENT_SOURCE_STRATEGY_ID)
-                                }
+//                                gitHubPullRequestDiscovery {
+//                                    strategyId(USE_CURRENT_SOURCE_STRATEGY_ID)
+//                                }
 
                                 // By default, Jenkins notifies GitHub with a constant context, i.e. a string that
                                 // identifies the check. We want each individual build result to have its own context so
